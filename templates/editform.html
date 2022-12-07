@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Edit resume</h1>
+<hr>
+{% if isSaved == 1 %}
+    <script>alert('Your resume version was saved');</script>
+{% endif %}
+{% if isSaved == 2 %}
+    <script>alert('Your resume version was not saved due to invalid data');</script>
+{% endif %}
+<form action="{% url 'editform' %}" method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'result' %}">See result</a>
+{% endblock %}

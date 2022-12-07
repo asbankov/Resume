@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Ваше резюме</h1>
+<hr>
+<ul>
+    <li>
+        Имя: {{resume.name}}
+    </li>
+    <li>
+        Фамилия: {{resume.surname}}
+    </li>
+    <li>
+        Возраст: {{resume.age}}
+    </li>
+    <li>
+        Предыдущее место работы: {{resume.company}}
+    </li>
+    <li>
+        Должность: {{resume.position}}
+    </li>
+    <li>
+        Стаж: {{resume.experience}}
+    </li>
+</ul>
+<a href="{% url 'editform' %}">Редактировать резюме</a>
+<a href="{% url 'download' %}">Скачать pdf</a>
+{% endblock %}
